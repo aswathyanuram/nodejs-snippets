@@ -9,16 +9,16 @@ function logger(type = "MESSAGE") {
   return function (data) {
     switch (type) {
       case DEBUG:
-        console.log(chalk.cyan(`${type}-${date}-${data}`));
+        console.log(chalk.cyan(`${type}-${date}- ${data}`));
         break;
       case INFO:
-        console.log(chalk.yellow(`${type}-${date}-${data}`));
+        console.log(chalk.yellow(`${type}-${date}- ${data}`));
         break;
       case ERROR:
-        console.log(chalk.red(`${type}-${date}-${data}`));
+        console.log(chalk.red(`${type}-${date}- ${data}`));
         break;
       default:
-        console.log(chalk.white(`${type}-${date}-${data}`));
+        console.log(chalk.white(`${type}-${date}- ${data}`));
     }
   };
 }
@@ -32,3 +32,5 @@ let APP_LOGGER = {
 
 APP_LOGGER.message("Jeeva");
 APP_LOGGER.error("An Error occured");
+APP_LOGGER.debug("This route is root endpoint");
+APP_LOGGER.info("Your need to pass username and password");
